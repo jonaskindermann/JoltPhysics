@@ -36,6 +36,8 @@ For breaking API changes see [this document](https://github.com/jrouwe/JoltPhysi
 * Kinematic bodies were assigned to the same island as bodies that were constrained to / in contact with them. This led to larger simulation islands and impacted performance.
 * Fixed contact callbacks for body with motion quality `LinearCast` vs a soft body. Previously, the contacts would be reported accidentally through the regular `ContactListener`. Now they're properly reported through the `SoftBodyContactListener`.
 * Fixed `CharacterVirtual::GetFirstContactForSweep` crashing if the body that it hit was removed from another thread between `CastShape` and `GetTransformedShape`.
+* Fixed an issue that broke cross platform determinism between ARM64 and x64 builds when compiling with double precision.
+* Fixed some warnings when compiling with clang using C++26.
 
 ## v5.5.0
 
